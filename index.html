@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora Romana</title>
+</head>
+<body>
+    
+</body>
+</html>
+<body>
+
+    <div class="romana">
+    <h1>Calculadora Romana</h1>
+
+    Primeiro Número :<br/>
+    <input id="numero1" type="string"/><br/>
+    <br/>
+    Segundo Número :<br/>
+    <input id="numero2" type="string"/><br/>
+    <br/>
+    <button onclick="somar()">+</button>
+    <button onclick="multiplicar()">*</button>
+    <button onclick="dividir()">/</button>
+    <button onclick="subtrair()">-</button>
+    <br/><br />
+    <div class="resultado">O Resultado é :</div>
+    </div> 
+
+    <script>
+        var n1 = document.querySelector('#numero1')
+        var n2 = document.querySelector('#numero2')
+        var resultado = document.querySelector('span')
+        
+        if (n1 !== "" && n2 !== "")
+        function somar() {
+            resultado.innerHTML = parseInt(n1.value) + parseInt(n2.value)
+           
+        }
+         function dividir() {
+            resultado.innerHTML = parseInt(n1.value) / parseInt(n2.value)
+        }
+         function multiplicar() {
+            resultado.innerHTML = parseInt(n1.value) * parseInt(n2.value)
+        }
+         function subtrair() {
+            resultado.innerHTML = parseInt(n1.value) - parseInt(n2.value)
+        }
+        
+            resultado.Context = "Preencha todos os campos";
+
+
+
+    function convertToRoman(num){
+	var romanToNum = {
+		M: 1000,
+		CM: 900,
+		D: 500,
+		CD: 400,
+		C: 100,
+		XC: 90,
+		L: 50,
+		XL: 40,
+		X: 10,
+		IX: 9,
+		V: 5,
+		IV: 4,
+		I: 1
+	};
+	var roman = "";
+	for (var key in romanToNum) {
+		
+		while (num>= romanToNum[key]){
+			roman += key;
+			num -= romanToNum[key];
+		}
+		
+	}
+	return roman;
+}
+convertToRoman(8);
+
+    </script>
+
+    
+   <script src="script.js"></script>
+</body>
+</html>
